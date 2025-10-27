@@ -1,0 +1,280 @@
+/**
+ * Theme footer
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+@mixin drop-down-select {
+    position: relative;
+    min-width: 500px;
+    width: 40%;
+    height: 42px;
+    margin: 0 auto;
+    @media screen and (max-width:$screen-sm) {
+        margin-bottom: 20px; 
+    }
+    @media screen and (max-width:$screen-xs) {
+        width: 100%;
+        min-width: 250px;
+    }
+    #select-box {
+        background: $ltblue;
+        #options-view-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 3;
+            &:checked ~ #options {
+                border: 1px solid #e2eded;
+                border-color: #eaf1f1 #e4eded #dbe7e7 #e4eded;
+            }
+            &:checked ~ #options a {
+                display: block;
+                padding: 5px 14px;    
+            }
+            &:checked ~ #options #option-bg { display: block; }
+        }
+        #select-button {
+            position: relative;
+            height: 16px;
+            padding: 12px 14px;
+            background-color: $ltblue;
+            cursor: pointer;
+            height:100%;
+            #selected-value {
+                font-size: 22px;
+                line-height: 100%;
+                text-align: left;
+                font-family: $lato;
+                margin-top: -5px;
+                padding: 5px 10px;
+                .filter-holder {
+                    font-family: $lato;
+                    color: $dkblue;
+                    font-size: 16px;
+                    strong {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+            #chevrons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 12px;
+                padding: 9px 14px;
+            }
+        }
+        #options {
+            position: absolute;
+            top: 53px;
+            right: 0;
+            left: -1px;
+            width: 100%;
+            margin: 0 auto;
+            background-color: #fff;
+            z-index: 2;
+            .options {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                a {
+                    display: none;
+                    padding: 0;
+                    color:$dkblue;
+                }
+            }
+        }
+    }
+
+    .option, .label {
+        color: $dkblue;
+        font-size: 16px;
+    }
+    
+    .option {
+        position: relative;
+        line-height: 1;
+        transition: 0.3s ease all;
+        z-index: 2;
+        text-align: left;
+        &:hover ~ #option-bg { background-color: $dkblue; }
+        &:hover a { color: $white; }
+    }
+
+    a {
+        display: none;
+        padding: 0;
+        color:$dkblue;
+        font-family: $lato;
+
+    }
+
+    @keyframes moveup {
+        0%{ bottom: -25px; opacity: 0;}
+        100%{ bottom: 0; opacity: 1;}
+    }
+
+    @keyframes movedown {
+        0%{ top: -25px; opacity: 0;}
+        100%{ top: 0; opacity: 1;}
+    }
+
+    #option-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 40px;
+        transition: 0.3s ease all;
+        z-index: 1;
+        display: none;
+    }
+
+    .option:nth-child(2):hover ~ #option-bg { top: 40px; }
+    .option:nth-child(3):hover ~ #option-bg { top: 80px; }
+    .option:nth-child(4):hover ~ #option-bg { top: 120px; }
+    .option:nth-child(5):hover ~ #option-bg { top: 160px; }
+    .option:nth-child(6):hover ~ #option-bg { top: 200px; }
+    .option:nth-child(7):hover ~ #option-bg { top: 240px; }
+    .option:nth-child(8):hover ~ #option-bg { top: 280px; }
+    .option:nth-child(9):hover ~ #option-bg { top: 320px; }
+    .option:nth-child(10):hover ~ #option-bg { top: 360px; }
+    .option:nth-child(11):hover ~ #option-bg { top: 400px; }
+    .option:nth-child(12):hover ~ #option-bg { top: 440px; }
+    .option:nth-child(13):hover ~ #option-bg { top: 480px; }
+    .option:nth-child(14):hover ~ #option-bg { top: 520px; }
+    .option:nth-child(15):hover ~ #option-bg { top: 560px; }
+    .option:nth-child(16):hover ~ #option-bg { top: 600px; }
+    .option:nth-child(17):hover ~ #option-bg { top: 640px; }
+    .option:nth-child(18):hover ~ #option-bg { top: 680px; }
+    .option:nth-child(19):hover ~ #option-bg { top: 720px; }
+}
+
+@mixin single-attorney-staff {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+        margin: 2.5px 0;
+        text-align: center;
+        &.small-red {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 20px;
+            color: $red;
+            .red-star {
+                height: 15px;
+                width: 15px;
+                margin-right: 10px;
+            }
+        }
+        &.small-blue {
+            a {
+                @extend .small-blue;
+                position: relative;
+                .nav-arrow {
+                    position: absolute;
+                    top: 7px;
+                    right: -15px;
+                }
+            }
+        }
+    }
+    .hide-link {
+        opacity: 0;
+        pointer-events: none;       
+    }
+    &.hide-hover {
+        &:hover {
+            .line-spacer {
+                width: 0 !important;
+            }
+        }   
+    }
+    &_image {
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+}
+
+@mixin flex-card-layout {
+    background: $ltblue;
+    padding: 40px 20px;
+    margin: 7.5px;
+    width: 30%;
+    min-width: 350px;
+    @media screen and (max-width: $screen-xl ) {
+        width: 40%;
+    }
+    @media screen and (max-width: $screen-md) {
+        width: 100%;
+        min-width: auto;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        width: 80%;
+    }
+    * {
+        text-align: center;
+    }
+}
+
+@mixin grid-card-layout($columns) {
+    display: grid;
+    grid-template-columns: $columns;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    p.blog-title, p.blog-title a {
+        font-size: 25px;
+        font-weight: $bold;
+        text-align: center;
+        font-family: $lato;
+    }
+    @media screen and (max-width: $screen-ipad) {
+        grid-template-columns: 1fr;
+    }
+}
+@mixin grid-card($bg-color, $border) {
+    background: $bg-color;
+    border-top: $border;
+    margin: 20px;
+    padding: 40px 20px;
+    min-width: 350px;
+    height: 350px;
+    @media screen and (max-width: $screen-ipad) {
+        height: auto;
+        min-width: auto;
+        margin: 20px 0;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        width: 80%;
+    }
+}

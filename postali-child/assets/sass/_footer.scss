@@ -1,0 +1,165 @@
+/**
+ * Footer Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+footer {
+    background: $dkblue;
+    p, a {
+        color: $white !important;
+        margin: 0;
+    }
+    a {
+        text-decoration: underline !important;
+        &:hover {
+            color: $white !important;
+            -webkit-text-decoration-color: $red !important;
+                    text-decoration-color: $red !important;
+            .state-directions p {
+                -webkit-text-decoration-color: $red;
+                        text-decoration-color: $red;
+            }
+        }
+    }
+    .location-list {
+        &.horizontal-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 80%;
+            @media screen and (max-width: $screen-sm) {
+                width: 100%;
+            }
+        }
+        &_item {
+            margin: 0 25px 30px 0;
+            max-width: 100%;
+            color: $white;
+            font-family: $lato;
+            .contact-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                -moz-column-gap: 2em;
+                     column-gap: 2em;
+                @media screen and (max-width: $screen-sm) {
+                    grid-template-columns: 1fr;
+                    -moz-column-gap: 0;
+                         column-gap: 0;
+                    row-gap: 2em;
+                }
+            }
+            * {
+                font-size: 16px;
+            }
+            &_title {
+                a {
+                    font-weight: $bold !important;
+                    color: $white !important;
+                }
+            }
+            &_address p, &_phone-email p {
+                line-height: 30px;
+            }
+            &_address {
+                .state-directions p {
+                    display: inline-block;
+                    text-decoration: underline;
+                    transition:$trans;
+                }
+            }
+            &_map {
+                iframe {
+                    width:100%;
+                    height: 100%;   
+                }
+            }
+            
+        }
+    }
+    .utility-footer {
+        padding-top: 0;
+        padding-bottom: 40px;
+        &_upper {
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: nowrap;
+            margin-bottom: 25px;
+            .column-25 {
+                padding-right: 15px;
+            }
+            .custom-logo {
+                width: 100%;
+            }
+            #bottom-border-box {
+                border-bottom: solid 1px $white;
+                width: 100%;
+            }
+        }
+        &_mid {
+            margin-bottom: 25px;
+            @media screen and (max-width: $screen-sm) {
+                flex-direction: column-reverse;
+            }
+            .column-25 {
+                justify-content: flex-end;
+                @media screen and (max-width: $screen-sm) {
+                    justify-content: flex-start;
+                    margin: 5px 0 30px 0;
+                }
+            }
+            .disclaimer {
+                color: white;
+                font-size: 12px;
+                font-family: $montserrat;
+                font-weight: $light;
+                line-height: 20px;
+                @media screen and (max-width: $screen-sm) {
+                    margin-bottom: 25px;
+                }
+            }
+        }
+        &_lower {
+            .column-full {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            ul#menu-footer-nav {
+                display: flex;
+                list-style-type: none;
+                margin-left: 0;
+                li {
+                    margin-left: 0;
+                    margin-right: 10px;
+                    padding-right: 10px;
+                    border-right: solid 0.9px white;
+                    a {
+                        text-decoration: underline;
+                        text-decoration-thickness: 0.9px;
+                        text-underline-offset: 1px;
+                        font-family: $montserrat;
+                        font-size: 16px;
+                        font-weight: $light;
+                        color: $white;
+                        @media screen and (max-width: $screen-xs) {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            p.copyright {
+                color: $white;
+                font-family: $montserrat;
+                font-size: 16px;
+                font-weight: $light;
+                display: inline-block;
+                @media screen and (max-width: $screen-xs) {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
