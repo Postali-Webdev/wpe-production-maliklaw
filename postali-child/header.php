@@ -68,7 +68,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 	<header>
-		<!-- github test -->
 		<div id="header-top" class="container">
 			<div id="header-top_left">
 				<a href="<?php esc_html_e($home); ?>" class="custom-logo-link" rel="home" aria-current="page"><div class="custom-logo"></div></a>
