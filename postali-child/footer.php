@@ -84,6 +84,7 @@
             <div class="columns utility-footer_lower">
                 <div class="column-full">
                     <div class="footer-menu">
+                        <nav>
                         <?php
                             $args = array(
                                 'container' => false,
@@ -91,6 +92,7 @@
                             );
                             wp_nav_menu( $args );
                         ?>	
+                        </nav>
                     </div>
                     <p class="copyright">Copyright ©<?php echo date("Y"); ?> American Immigration Law Group. All rights reserved.</p>
                     <?php if(is_page_template('front-page.php')) { ?>

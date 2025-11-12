@@ -75,6 +75,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div id="header-top_right">
 				<div id="header-top_menu">
 					<div id="full-nav">
+                        <nav>
 						<?php
 							$args = array(
 								'container' => false,
@@ -83,6 +84,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							);
 							wp_nav_menu( $args );
 						?>	
+                        </nav>
 						<form class="navbar-form-search" role="search" method="get" action="/">
 							<div class="search-form-container hdn" id="search-input-container">
 								<div class="search-input-group">
